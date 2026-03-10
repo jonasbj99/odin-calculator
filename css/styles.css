@@ -1,7 +1,21 @@
-/* FONT */
+@font-face {
+  font-family: "League Spartan";
+  src: url("../fonts/league-spartan.ttf");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
 
 :root {
-  --main-font: Arial;
+  --main-font: "League Spartan", Arial, sans-serif;
+  --jbj-col: #fb0;
+  --panel-col: #e5e5e5;
+  --dark-col: #2f2f2f;
+  --light-col: #f0f0f0;
+  --plus-col: #599b60;
+  --minus-col: #f8403a;
+  --multiply-col: #4a89bf;
+  --divide-col: #fc8537;
 }
 
 * {
@@ -19,6 +33,7 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+  padding: 5px;
 }
 
 .main-full {
@@ -26,4 +41,11 @@
   height: 100vh;
   align-items: center;
   justify-content: center;
+}
+
+.num-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+  padding: 5px;
 }
