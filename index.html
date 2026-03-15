@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <script src="./js/calculator.js" defer></script>
   </head>
-  <body>
-    <main class="main-full flex-col">
-      <div>
+  <body class="fullscreen">
+    <main class="calculator flex-col">
+      <div class="panel">
         <div class="flex-row">
           <p>First Number</p>
           <p>Operator</p>
@@ -19,13 +19,13 @@
         </div>
       </div>
       <div class="flex-row">
-        <div class="flex-col">
-          <button>+</button>
-          <button>-</button>
-          <button>*</button>
-          <button>/</button>
+        <div class="flex-col panel">
+          <button id="plus">+</button>
+          <button id="minus">-</button>
+          <button id="multiply">*</button>
+          <button id="divide">/</button>
         </div>
-        <div class="num-grid">
+        <div class="num-grid panel">
           <button>7</button>
           <button>8</button>
           <button>9</button>
@@ -40,9 +40,13 @@
           <button>.</button>
         </div>
         <div class="flex-col">
-          <button>Clear</button>
-          <button>Delete</button>
-          <button>=</button>
+          <div class="panel flex-col">
+            <button>Clear</button>
+            <button>Delete</button>
+          </div>
+          <div class="panel grow">
+            <button id="equal">=</button>
+          </div>
         </div>
       </div>
     </main>

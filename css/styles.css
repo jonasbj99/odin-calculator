@@ -22,30 +22,84 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: var(--main-font);
+}
+
+.fullscreen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .flex-row {
   display: flex;
   gap: 5px;
+  align-items: stretch;
 }
 
 .flex-col {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  padding: 5px;
 }
 
-.main-full {
-  width: 100vw;
-  height: 100vh;
+.grow {
+  flex-grow: 1;
+}
+
+.calculator {
   align-items: center;
   justify-content: center;
+}
+
+.panel {
+  background-color: var(--panel-col);
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .num-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5px;
-  padding: 5px;
+
+  button {
+    width: 75px;
+  }
+}
+
+button {
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+  background-color: var(--dark-col);
+  color: var(--light-col);
+}
+
+#plus {
+  color: var(--dark-col);
+  background-color: var(--plus-col);
+}
+
+#minus {
+  color: var(--dark-col);
+  background-color: var(--minus-col);
+}
+
+#multiply {
+  color: var(--dark-col);
+  background-color: var(--multiply-col);
+}
+
+#divide {
+  color: var(--dark-col);
+  background-color: var(--divide-col);
+}
+
+#equal {
+  color: var(--dark-col);
+  background-color: var(--jbj-col);
+  height: 100%;
 }
