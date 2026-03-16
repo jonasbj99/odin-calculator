@@ -17,39 +17,39 @@
     <main class="calculator flex-col">
       <div class="panel">
         <div class="display flex-row">
-          <p class="first-num">First Number</p>
-          <p class="operator">Operator</p>
-          <p class="second-num">Second Number</p>
+          <p id="firstNum" class="number"></p>
+          <p id="operator" class="operator"></p>
+          <p id="secondNum" class="number"></p>
         </div>
       </div>
       <div class="flex-row">
         <div class="flex-col panel">
-          <button class="plus"><i class="fa-solid fa-plus"></i></button>
-          <button class="minus"><i class="fa-solid fa-minus"></i></button>
-          <button class="multiply"><i class="fa-solid fa-xmark"></i></button>
-          <button class="divide"><i class="fa-solid fa-divide"></i></button>
+          <button id="plusBtn" class="plus"><i class="fa-solid fa-plus"></i></button>
+          <button id="minusBtn" class="minus"><i class="fa-solid fa-minus"></i></button>
+          <button id="multiplyBtn" class="multiply"><i class="fa-solid fa-xmark"></i></button>
+          <button id="divideBtn" class="divide"><i class="fa-solid fa-divide"></i></button>
         </div>
-        <div class="num-grid panel">
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>+/-</button>
-          <button>0</button>
-          <button>.</button>
+        <div id="numContainer" class="num-grid panel">
+          <button value="7">7</button>
+          <button value="8">8</button>
+          <button value="9">9</button>
+          <button value="4">4</button>
+          <button value="5">5</button>
+          <button value="6">6</button>
+          <button value="1">1</button>
+          <button value="2">2</button>
+          <button value="3">3</button>
+          <button disabled>+/-</button>
+          <button value="0">0</button>
+          <button disabled>.</button>
         </div>
         <div class="flex-col">
           <div class="panel flex-col">
-            <button>Clear</button>
-            <button>Delete</button>
+            <button id="clearBtn"><i class="fa-solid fa-c"></i></i></button>
+            <button id="deleteBtn"><i class="fa-solid fa-delete-left"></i></button>
           </div>
           <div class="panel grow">
-            <button class="equal"><i class="fa-solid fa-equals"></i></button>
+            <button id="equalBtn" class="equal"><i class="fa-solid fa-equals"></i></button>
           </div>
         </div>
       </div>

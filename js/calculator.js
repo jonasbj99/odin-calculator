@@ -1,7 +1,37 @@
+// Display
+const firstNum = document.getElementById("firstNum");
+const operator = document.getElementById("operator");
+const secondNum = document.getElementById("secondNum");
+
+// Operator Buttons
+const plusBtn = document.getElementById("plusBtn");
+plusBtn.addEventListener("click", () => setOperator("+"));
+const minusBtn = document.getElementById("minusBtn");
+minusBtn.addEventListener("click", () => setOperator("-"));
+const multiplyBtn = document.getElementById("multiplyBtn");
+multiplyBtn.addEventListener("click", () => setOperator("*"));
+const divideBtn = document.getElementById("divideBtn");
+divideBtn.addEventListener("click", () => setOperator("/"));
+const equalBtn = document.getElementById("equalBtn");
+equalBtn.addEventListener("click", calculate);
+
+// Number Buttons
+const numContainer = document.getElementById("numContainer");
+const numBtns = document.querySelectorAll("[value]");
+numBtns.forEach((btn) =>
+  btn.addEventListener("click", () => addToValue(btn.value)),
+);
+
+// Clear & Delete Buttons
+const clearBtn = document.getElementById("clearBtn");
+clearBtn.addEventListener("click", clearValues);
+const deleteBtn = document.getElementById("deleteBtn");
+deleteBtn.addEventListener("click", deleteValue);
+
 const calc = {
-  firstValue: "43",
-  secondValue: "12",
-  operator: "*",
+  firstValue: "",
+  secondValue: "",
+  operator: "",
   "+": function () {
     return +this.firstValue + +this.secondValue;
   },
@@ -17,15 +47,19 @@ const calc = {
 };
 
 function calculate() {
-  const result = calc[calc.operator]();
-  calc.operator = "";
-  calc.secondValue = "";
-  calc.firstValue = result;
-  updateUI();
+  if (calc.secondValue != "") {
+    const result = calc[calc.operator]();
+    calc.operator = "";
+    calc.secondValue = "";
+    calc.firstValue = result;
+    updateUI();
+  }
 }
 
 function setOperator(op) {
-  calc.operator = op;
+  if (calc.firstValue != "") {
+    calc.operator = op;
+  }
   updateUI();
 }
 
@@ -38,10 +72,10 @@ function addToValue(val) {
   updateUI();
 }
 
-function deleteVal() {
-  if (calc.secondValue != "") {
+function deleteValue() {
+  if (calc.secondValue) {
     calc.secondValue = calc.secondValue.slice(0, -1);
-  } else if (calc.operator != "") {
+  } else if (calc.operator) {
     calc.operator = "";
   } else {
     calc.firstValue = calc.firstValue.slice(0, -1);
@@ -49,9 +83,15 @@ function deleteVal() {
   updateUI();
 }
 
+function clearValues() {
+  calc.firstValue = "";
+  calc.operator = "";
+  calc.secondValue = "";
+  updateUI();
+}
+
 function updateUI() {
-  // Update
-  // Upd First Number
-  // Upd Operator
-  // Upd Second Number
+  firstNum.innerText = calc.firstValue;
+  operator.innerText = calc.operator;
+  secondNum.innerText = calc.secondValue;
 }

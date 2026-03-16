@@ -81,7 +81,6 @@
   .number {
     background-color: var(--jbj-col);
     color: var(--dark-col);
-    flex-grow: 1;
   }
 }
 
