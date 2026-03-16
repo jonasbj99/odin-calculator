@@ -75,9 +75,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--divide-col);
-    color: var(--dark-col);
     padding: 5px;
+  }
+
+  .number {
+    background-color: var(--jbj-col);
+    color: var(--dark-col);
+    flex-grow: 1;
   }
 }
 
@@ -96,16 +100,25 @@ button {
   width: 50px;
   background-color: var(--dark-col);
   color: var(--light-col);
-  border: none;
+  border: 2px solid var(--dark-col);
   cursor: pointer;
-  transition: transform 0.1s;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
 
-  &:hover {
-    transform: scale(0.98);
+  &:hover:not(:disabled) {
+    transform: scale(0.96);
   }
 
-  &:active {
-    transform: scale(0.96);
+  &:active:not(:disabled) {
+    transform: scale(0.92);
+  }
+
+  &:disabled {
+    background-color: var(--light-col);
+    color: var(--panel-col);
+    border: none;
+    cursor: default;
   }
 }
 
