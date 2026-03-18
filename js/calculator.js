@@ -28,6 +28,8 @@ clearBtn.addEventListener("click", clearValues);
 const deleteBtn = document.getElementById("deleteBtn");
 deleteBtn.addEventListener("click", deleteValue);
 
+const operatorStyles = ["plus", "minus", "multiply", "divide"];
+
 const calc = {
   firstValue: "",
   secondValue: "",
@@ -76,7 +78,7 @@ function deleteValue() {
   if (calc.secondValue) {
     calc.secondValue = calc.secondValue.slice(0, -1);
   } else if (calc.operator) {
-    calc.operator = "";
+    calc.operator = calc.operator.slice(0, -1);
   } else {
     calc.firstValue = calc.firstValue.slice(0, -1);
   }
@@ -94,4 +96,33 @@ function updateUI() {
   firstNum.innerText = calc.firstValue;
   operator.innerText = calc.operator;
   secondNum.innerText = calc.secondValue;
+
+  operatorStyles.forEach((style) => operator.classList.remove(style));
+
+  switch (calc.operator) {
+    case "+":
+      operator.classList.add("plus");
+      break;
+    case "-":
+      operator.classList.add("minus");
+      break;
+    case "*":
+      operator.classList.add("multiply");
+      break;
+    case "/":
+      operator.classList.add("divide");
+      break;
+  }
+
+  calc.firstValue
+    ? firstNum.classList.remove("hide")
+    : firstNum.classList.add("hide");
+
+  calc.secondValue
+    ? secondNum.classList.remove("hide")
+    : secondNum.classList.add("hide");
+
+  calc.operator
+    ? operator.classList.remove("hide")
+    : operator.classList.add("hide");
 }
