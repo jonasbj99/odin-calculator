@@ -14,6 +14,8 @@ Calculator project from The Odin Project in the JavaScript Basics section of the
 
 ## Considered Improvements
 
+- Correct icons for operators on display
+
 - Decimal point button functionality
 
 - Positive and negative toggle button
